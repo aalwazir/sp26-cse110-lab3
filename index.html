@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Team Meeting Minutes</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Meeting minutes for a sample team meeting">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg">
+  </head>
+  <body>
+    <header>
+    <h1>Pomodoro Timer First Brainstorm</h1>
+    <p>Meeting Minutes</p>
+    <nav>
+        <a href="#attendance">Attendance</a><br>
+        <a href="#agenda">Agenda</a><br>
+        <a href="#unfinished">Unfinished Business</a><br>
+        <a href="#new">New Business</a><br>
+        <a href="#misc">Miscellaneous</a><br>
+        <a href="#media">Media</a><br>
+        <a href="#form">Feedback Form</a>
+    </nav>
+    <hr>
+    </header>
+    <main>
+    <section>
+        <h2>Meeting Topic</h2>
+        <p>Brainstorming features for a Pomodoro Timer application.</p>
+    </section>
+
+    <section>
+        <h2>Date</h2>
+        <p>April 14, 2026</p>
+    </section>
+
+    <section id="attendance">
+        <h2>Attendance</h2>
+        <ul>
+        <li>Ayat</li>
+        <li>Emily</li>
+        <li>Jordan</li>
+        <li>Max</li>
+        </ul>
+    </section>
+
+    <section id="agenda">
+        <h2>Agenda</h2>
+        <ol>
+        <li>Review project idea</li>
+        <li>Discuss key features</li>
+        <li>Assign initial tasks</li>
+        </ol>
+    </section>
+
+    <section id="unfinished">
+        <h2>Unfinished Business</h2>
+        <p>Need to decide whether the app should support custom timers!!</p>
+    </section>
+
+    <section id="new">
+        <h2>New Business</h2>
+        <div>
+        <p>Potential ideas discussed during the meeting:</p>
+        <ul>
+            <li><strong>Task tracking</strong> for study sessions</li>
+            <li>Short break and long break scheduling</li>
+            <li>Simple statistics page?</li>
+        </ul>
+        </div>
+    </section>
+
+    <section id="misc">
+        <h2>Miscellaneous Comments / Questions / Concerns</h2>
+        <p>
+        One member suggested using a <b>minimal</b> design. Another member said accessibility is <strong>very important</strong>.
+        </p>
+        <p>
+        Someone noted that the timer sound should be <i>gentle</i>,
+        while another emphasized it should be <em>easy to notice</em>.
+        </p>
+        <p>
+        Next meeting: review sketches and finalize MVP features.
+        </p>
+        <span>Reminder: bring UI sketches next time.</span>
+    </section>
+
+    <section>
+        <h2>Quick Notes</h2>
+        <h3>Summary</h3>
+        <p>The team agreed to begin with a basic timer, task list, and session history.</p>
+    </section>
+
+    <section>
+        <h2>Extra Notes</h2>
+        <details>
+            <summary>Click to view more discussion notes</summary>
+            <p>We also discussed notification sounds, dark mode, and session history tracking.</p>
+        </details>
+    </section>
+
+    <section id="media">
+        <h2>Pictures and Recordings</h2>
+        <h3>Timer Diagram</h3>
+        <p>
+          The image below represents the rough sketch from the
+          meeting.
+        </p>
+        <img
+          src="assets/diagram.png"
+          alt="A whiteboard sketch of the Pomodoro Timer layout and workflow"
+          width="480"
+        >
+
+        <h3>Audio Recording</h3>
+        <audio controls>
+          <source src="assets/meeting-audio.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+
+        <h3>Video Recording</h3>
+        <video controls width="480">
+          <source src="assets/meeting-video.mp4" type="video/mp4">
+          Your browser does not support the video element.
+        </video>
+      </section>
+
+      <section id="form">
+        <h2>Feedback Form</h2>
+
+        <form>
+            <fieldset>
+            <legend>Meeting Feedback</legend>
+
+            <p>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </p>
+
+            <p>
+                <label for="date">Meeting Date:</label>
+                <input type="date" id="date" name="date">
+            </p>
+
+            <p>Was the meeting helpful?</p>
+            <input type="radio" id="helpful-yes" name="helpful" value="yes">
+            <label for="helpful-yes">Yes</label>
+
+            <input type="radio" id="helpful-no" name="helpful" value="no">
+            <label for="helpful-no">No</label>
+
+            <p>What topics were useful?</p>
+            <input type="checkbox" id="topic1" name="topics" value="planning">
+            <label for="topic1">Planning</label>
+
+            <input type="checkbox" id="topic2" name="topics" value="features">
+            <label for="topic2">Feature discussion</label>
+
+            <input type="checkbox" id="topic3" name="topics" value="tasks">
+            <label for="topic3">Task assignment</label>
+
+            <p>
+                <label for="favorite-tool">Favorite tool mentioned:</label>
+                <input list="tools" id="favorite-tool" name="favorite-tool">
+                <datalist id="tools">
+                <option value="GitHub"></option>
+                <option value="VS Code"></option>
+                </datalist>
+            </p>
+
+            <p>
+                <label for="role">Select your role:</label>
+                <select id="role" name="role">
+                <option value="">Choose one</option>
+                <option value="developer">Developer</option>
+                <option value="designer">Designer</option>
+                <option value="manager">Manager</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="comments">Additional comments:</label><br>
+                <textarea id="comments" name="comments" rows="4" cols="40"></textarea>
+            </p>
+
+            <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+        </section>
+    </main>
+    <footer>
+        <hr>
+        <p>Created for CSE 110 Lab 2</p>
+    </footer>
+  </body>
+</html>
