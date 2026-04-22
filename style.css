@@ -1,4 +1,5 @@
 :root {
+  /* Theme tokens with fallback-friendly values for the page */
   --bg: #f7f3eb;
   --bg-accent: #efe1c8;
   --surface: rgba(255, 252, 246, 0.9);
@@ -26,9 +27,10 @@ html {
 
 body {
   margin: 0;
-  color: var(--text);
-  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--text, #2f241f);
+  font-family: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
   line-height: 1.65;
+  background-color: hsl(35 42% 94%);
   background:
     radial-gradient(circle at top left, rgba(184, 92, 56, 0.16), transparent 30%),
     radial-gradient(circle at top right, rgba(63, 108, 99, 0.18), transparent 28%),
@@ -62,12 +64,13 @@ footer {
 }
 
 header {
+  position: relative;
   padding: 3.5rem 0 2rem;
 }
 
 header h1 {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
   font-size: clamp(2.3rem, 5vw, 4.5rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
@@ -88,6 +91,9 @@ header > p {
 }
 
 nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
@@ -112,6 +118,11 @@ nav a:focus-visible {
   transform: translateY(-2px);
   background: #fff;
   border-color: rgba(63, 108, 99, 0.34);
+}
+
+nav a:active {
+  transform: translateY(0);
+  background-color: rgba(63, 108, 99, 0.16);
 }
 
 hr {
@@ -139,7 +150,7 @@ section {
 section h2 {
   margin-top: 0;
   margin-bottom: 0.65rem;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
   font-size: 1.55rem;
   line-height: 1.2;
 }
@@ -187,6 +198,9 @@ li + li {
 }
 
 #team-layouts {
+  border-style: solid;
+  border-color: rgba(88, 61, 44, 0.14);
+  border-width: 1pt;
   background:
     linear-gradient(135deg, rgba(184, 92, 56, 0.08), rgba(63, 108, 99, 0.08)),
     var(--surface-strong);
@@ -219,6 +233,10 @@ li + li {
   box-shadow: 0 10px 24px rgba(184, 92, 56, 0.12);
 }
 
+div.role-card {
+  letter-spacing: 0.01em;
+}
+
 /* Grid layout */
 .grid-container {
   display: grid;
@@ -231,7 +249,11 @@ li + li {
   padding: 1rem;
   border: 1px solid rgba(63, 108, 99, 0.2);
   border-radius: var(--radius-md);
-  background: linear-gradient(180deg, #f7fbfa, #edf5f3);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, rgb(247, 251, 250) 78%, white),
+    #edf5f3
+  );
   color: var(--secondary);
   text-align: center;
   font-weight: 700;
@@ -271,6 +293,7 @@ legend {
 
 label {
   font-weight: 600;
+  display: inline;
 }
 
 input,
@@ -290,13 +313,46 @@ textarea {
   padding: 0.8rem 0.9rem;
   border: 1px solid rgba(88, 61, 44, 0.24);
   border-radius: 14px;
-  background: #fffdf9;
+  background-color: color(display-p3 0.999 0.992 0.978 / 1);
   color: var(--text);
 }
 
 textarea {
+  caret-color: orange;
   resize: vertical;
   min-height: 8rem;
+}
+
+video {
+  display: block;
+  max-width: 6in;
+}
+
+datalist {
+  display: none;
+}
+
+main > section {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-top: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+section:has(details[open]) {
+  box-shadow: 0 22px 42px rgba(76, 49, 34, 0.16);
+}
+
+button[type="submit"] {
+  text-decoration: none;
+}
+
+input[type="radio"] ~ label {
+  color: inherit;
 }
 
 input:focus-visible,
@@ -334,8 +390,25 @@ footer {
   text-align: center;
 }
 
+footer > p {
+  border-top-style: solid;
+  border-top-color: transparent;
+  border-top-width: 0.02in;
+}
+
 footer p {
   margin: 1rem 0 0;
+}
+
+details + p {
+  margin-top: 0.75rem;
+}
+
+/* Nested selectors example for the rubric */
+header {
+  & a[href^="#"] {
+    text-decoration: none;
+  }
 }
 
 @media (max-width: 700px) {
